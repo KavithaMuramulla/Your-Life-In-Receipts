@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Life, In Receipts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css"></head><body>
+<a class="skip" href="#v-open">Skip to content</a>
+<nav><div class="nav-in">
+<div class="brand">Your Life, <em>In Receipts</em></div>
+<div class="tabs" id="tabs"></div>
+</div></nav>
+<div class="wrap">
+
+<section id="v-open">
+  <div class="pill">4,359 receipts · 2015 → 2018</div>
+  <h1>Nobody kept<br>a diary.<span>The data did.</span></h1>
+  <p class="lede">What follows was reconstructed from one person's raw exhaust: 46,339 songs played, 2,461 transactions, and the timestamps that quietly stitch them together. No names. No photos. Just receipts — and what happens when you stop reading them one at a time.</p>
+  <div class="grid stats" id="stats"></div>
+  <div class="note" id="thesis"></div>
+</section>
+
+<section id="v-chapters" class="hide">
+  <p class="kicker">Act I — Who were they, and when?</p>
+  <h2>Eight chapters, written by nobody</h2>
+  <p class="lede">The data was split into six-month eras, then each era was read for its own signature: what was played, what was bought, what was new. Pick one.</p>
+  <div class="grid chaps" id="chaps" style="margin-top:26px"></div>
+  <div id="chapDetail" style="margin-top:22px"></div>
+</section>
+
+<section id="v-web" class="hide">
+  <p class="kicker">Act II — What was connected?</p>
+  <h2>The constellation</h2>
+  <p class="lede">A day where three or more different kinds of receipt appear is rarely a coincidence — it's a scene. 40 of them were scored and ranked. Tap a day to see its moments pulled into orbit; tap any node to read it.</p>
+  <div class="ctr" id="webMode"></div>
+  <div class="mrow" style="margin-top:6px">
+    <div class="stage">
+      <svg class="web" id="svg" role="img" aria-label="Interactive constellation of one day's receipts" viewBox="0 0 520 430" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="tipbox" id="tip"><div class="t1">Hover or tap a node</div><div class="t2">Nothing selected</div><div class="t3">Each ring is one receipt from that day. Lines mean they happened within hours of each other.</div></div>
+    </div>
+    <div class="mlist" id="moms"></div>
+  </div>
+</section>
+
+<section id="v-patterns" class="hide">
+  <p class="kicker">Act III — What kept happening?</p>
+  <h2>The habits underneath</h2>
+  <p class="lede">Individually a receipt is noise. Stacked four years deep, it becomes a personality.</p>
+  <div class="two" style="margin-top:24px">
+    <div class="card"><div class="kicker" style="margin-bottom:12px">A day in 24 hours</div>
+      <div class="scroll-x"><div class="clock" id="clock"></div><div class="axis" id="clockAxis"></div></div>
+      <p class="note" style="border:0;padding:0;margin-top:14px" id="clockNote"></p></div>
+    <div class="card"><div class="kicker" style="margin-bottom:12px">Rituals — bought again and again</div><div class="rit" id="rituals"></div></div>
+  </div>
+  <div class="card" style="margin-top:16px"><div class="kicker" style="margin-bottom:12px">Every day, 2015–2018 · music hours vs. spending</div>
+    <div class="scroll-x"><div class="heat" id="heat"></div></div>
+    <div class="legend" style="margin-top:12px"><span><i style="background:#7ee0c5"></i>music</span><span><i style="background:#ffb86b"></i>money</span><span><i style="background:#c08bff"></i>both</span><span><i style="background:#ffffff14"></i>silence</span></div>
+    <div class="t3" id="heatTip" style="margin-top:12px;font-size:13px;color:var(--dim);min-height:20px">Hover a square.</div></div>
+  <div class="card" style="margin-top:16px"><div class="kicker" style="margin-bottom:12px">Loyalty — the artists that survived every era</div>
+    <div class="rit" id="loyal"></div>
+    <p class="note" id="loyalNote"></p></div>
+</section>
+
+<section id="v-archive" class="hide">
+  <p class="kicker">The archive</p>
+  <h2>Search the whole life</h2>
+  <input class="q" id="q" type="search" aria-label="Search every receipt" placeholder="try: beatles · milk · train · 2 AM · medicine · salary">
+  <div class="ctr" id="types"></div>
+  <div id="qStat" class="t3" style="color:var(--dim);font-family:var(--f-m);font-size:11.5px"></div>
+  <div class="rlist" id="rlist"></div>
+  <div style="text-align:center;margin-top:18px"><button class="f" id="more">Load more</button></div>
+</section>
+
+<footer>Built from three real datasets: Spotify streaming history (149,860 plays, 2013–2024), a household transaction ledger (2,461 entries), and an Indian retail-transaction set. Overlapping window 2015–2018 used as the life. Every chapter title, pattern and connection on this page was computed from the data, not written by hand.</footer>
+</div>
+<script src="data/receipts.js"></script>
+<script src="assets/js/app.js"></script></body></html>
